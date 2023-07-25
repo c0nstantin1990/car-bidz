@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS car_bidz_db;
+CREATE DATABASE car_bidz_db;
