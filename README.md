@@ -1,4 +1,13 @@
 # Car Bidz
+## User Story
+As a car dealer 
+I want to have an easy way to access cars up for auction
+So that I can easily see various types of cars for sale
+I want to see details of these cars
+So that I can select the next car to add to my collection
+I want to also auction cars
+So that I can easily post them and make them easy to read.
+
 
 ## Description
 
