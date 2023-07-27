@@ -1,17 +1,16 @@
-const User = require('./User');
-const Cars = require('./Cars');
+const User = require ('./User');
+const Cars = require ('./Cars');
 
-
-hasMany(Cars, {
-    foreignKey: 'user_id',
-    onDelete: 'CASCADE',
-    onUpdate: 'CASCADE',
-    as: 'cars'
+// Define associations
+User.hasMany(Cars, {
+    foreignKey: 'user_id'
 });
 
-belongsTo(User, {
-    foreignKey: 'user_id',
-    as: 'user'
+Cars.belongsTo(User, {
+    foreignKey: 'user_id'
 });
 
-module.exports = { User, Cars };
+module.exports = {
+    User,
+    Cars
+};
