@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Cars extends Model { }
+class Post extends Model { }
 
 // TABLE CONFIGURATION Using sequelize
 Cars.init(

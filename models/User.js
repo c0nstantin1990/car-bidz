@@ -9,7 +9,7 @@ class User extends Model {
       }
 }
 
-User.init(
+user.init(
     {
      // define columns
         id: {
@@ -62,7 +62,7 @@ User.init(
         freezeTableName: true,
         underscored: true,
         modelName: 'user',
-        tableName: 'user'
+        tableName: 'users'
         });
         
         module.exports = User;

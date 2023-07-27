@@ -1,7 +1,4 @@
 const router = require("express").Router();
-const { User } = require("../../models");
-
-// base URL of this file is localhost:3001/api/users
 
 router.post("/", async (req, res) => {
   try {
