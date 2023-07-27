@@ -10,4 +10,10 @@ router.get("/", (req, res) => {
   res.render("login");
 });
 
+router.get("/profile", (req, res) => {
+  // const users = User.findAll({})
+  
+  res.render("profile", {  logged_in: req.session.logged_in });
+});
+
 module.exports = router;
