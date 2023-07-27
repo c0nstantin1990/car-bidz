@@ -4,12 +4,20 @@ const sequelize = require('../config/connection');
 
 // create our User model
 class User extends Model {
-    checkPassword(loginPw) {
-        return bcrypt.compareSync(loginPw, this.password);
-      }
+async setPassword(password) {
+    this.password = await bcrypt.hash(password, 10);
+    bcrypt.hash(password, 10, (err, hash) => {
+        if (err) {
+            throw err;
+        }
+        this.password = hash;
+    }
+    );
+    return this.password;
+    }
 }
 
-user.init(
+User.init(
     {
      // define columns
         id: {
@@ -61,8 +69,8 @@ user.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'user',
-        tableName: 'users'
+        modelName: 'User',
+        tableName: 'user'
         });
         
         module.exports = User;
