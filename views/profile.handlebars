@@ -31,6 +31,13 @@
     </form>
   </div>
 
+{{!-- show already rendered/made items listed in cards --}}
+{{!-- use partial --}}
+{{!-- need object for info of car items name of key for the pairs --}}
+{{#each cars as |car|}}
+{{> profile-partial}}
+{{/each}}
+
   {{#if item.length}}
   <div class="col-md-6 item-list">
     <h3>Items Up For Bid:</h3>
