@@ -1,7 +1,21 @@
-{{!-- adding partial for rendering created items listed on profile accounts --}}
-
-<section class="card">
-<p>
-  {{id}}{{make}}{{model}}{{year}}{{price}}{{date_created}}{{user_id}}
-</p>
-</section>
+   <!-- Cards -->
+      <div class="col-md-9">
+        <div class="row">
+          <!-- Card Template w/ Handlebars -->
+          {{#each cars}}
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-make">Make: {{make}}</h5>
+                <p class="card-model">Model: {{model}}</p>
+                <p class="card-year">Year: {{year}}</p>
+                <p class="card-price">Price: {{price}}</p>
+                <button class="btn btn-primary">Make Bid</button>
+              </div>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
