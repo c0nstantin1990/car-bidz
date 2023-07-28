@@ -42,7 +42,10 @@ Cars.init(
         },
         image_url: {
             type: DataTypes.STRING,
-            allowNull: false,
+            // allowNull: false,
+            //line 45 delete allow null false cloudnary get images easy
+            //add cloudnary can have line 45
+            //will throw warning without being in profile handlebars
         },
     },
     {
