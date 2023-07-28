@@ -15,15 +15,17 @@ async function newData() {
 const newFormHandler = async (event) => {
     event.preventDefault();
     
-  const nameItem = document.querySelector('#item-name').value.trim();
-  const itemPrice = document.querySelector('#item-price').value.trim();
-  const carMake = document.querySelector('#car-make').value.trim();
-  const carModel = document.querySelector('#car-model').value.trim();
 
-  if (nameItem && itemPrice && carMake && carModel) {
+  const price = document.querySelector('#item-price').value.trim();
+  const make = document.querySelector('#car-make').value.trim();
+  const model = document.querySelector('#car-model').value.trim();
+  const year = document.querySelector('#car-year').value.trim();
+
+  if (price && make && model && year) {
     const response = await fetch(`/api/projects`, {
       method: 'POST',
-      body: JSON.stringify({ nameItem, itemPrice, carMake, carModel }),
+      //routes expect to be THE SAME
+      body: JSON.stringify({ price, make, model, year }),
       headers: {
         'Content-Type': 'application/json',
       },
