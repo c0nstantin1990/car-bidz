@@ -1,0 +1,70 @@
+ <div class="container mt-4">
+      <article>
+        <a href="/profile" class="btn btn-secondary">&larr; Back to Profile</a>
+        <h2>Edit Car</h2>
+        <form class="edit-car-form">
+          <div class="form-group">
+            <label for="car-title">Car Make</label>
+            <input
+              name="car-make"
+              type="text"
+              class="form-control"
+              value="{{car.make}}"
+            />
+          </div>
+          <div class="form-group">
+            <label for="car-text">Car Model</label>
+            <textarea
+              name="car-model"
+              class="form-control"
+            >{{car.model}}</textarea>
+          </div>
+          <div class="form-group">
+            <label for="car-text">Car Year</label>
+            <textarea
+              name="car-year"
+              class="form-control"
+            >{{car.year}}</textarea>
+          </div>
+          <div class="form-group">
+            <label for="car-text">Car Price</label>
+            <textarea
+              name="car-price"
+              class="form-control"
+            >{{car.price}}</textarea>
+          </div>
+          <div class="form-group">
+            <label for="car-text">Car Image</label>
+            <textarea
+              name="car-image"
+              class="form-control"
+            >{{car.image_url}}</textarea>
+          </div>
+          <div>
+            <p>Posted on
+              {{format_date car.created_at}}<a href="/car/{{car.id}}">
+                Bids:{{car.bids.length}}
+              </a>
+            </p>
+            <p>
+
+            </p>
+          </div>
+          <button type="submit" class="btn btn-primary">Save Car</button>
+          <button type="button" class="btn btn-danger delete-car-btn">Delete Car</button>
+        </form>
+      </article>
+
+      <form class="bid-form mt-4">
+        <div class="form-group">
+          <label for="bid-body">Place your Bid:</label>
+          <textarea name="bid-body" class="form-control"></textarea>
+        </div>
+        <button type="submit" class="btn btn-success">Add Bid</button>
+      </form>
+      {{> bids car.bids}}
+    </div>
+    <script src="/js/editCar.js"></script>
+    <script src="/js/deleteCar.js"></script>
+    <script src="/js/bid.js"></script>
+ 
