@@ -1,10 +1,9 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Cars extends Model { }
+class Car extends Model { }
 
-// TABLE CONFIGURATION Using sequelize
-Cars.init(
+Car.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -28,10 +27,13 @@ Cars.init(
             type: DataTypes.INTEGER,
             allowNull: false,
         },
-        date_created: {
-            type: DataTypes.DATE,
+        start_bid: {
+            type: DataTypes.INTEGER,
+            allowNull: true,
+        },
+        image_url: {
+            type: DataTypes.STRING,
             allowNull: false,
-            defaultValue: DataTypes.NOW,
         },
         user_id: {
             type: DataTypes.INTEGER,
@@ -40,19 +42,13 @@ Cars.init(
                 key: "id",
             },
         },
-        image_url: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
     },
     {
-
         sequelize,
-        timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: "cars",
+        modelName: "car",
     }
 );
-// Export the model
-module.exports = Cars;
+
+module.exports = Car;

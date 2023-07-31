@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-auto">
-    <h2>Welcome back, {{name}}!</h2>
+    <h2>Welcome back, {{username}}!</h2>
   </div>
 </div>
 
@@ -26,6 +26,10 @@
         <textarea class="form-input" id="car-model" name="car-model"></textarea>
       </div>
       <div class="form-group">
+        <label for="car-year"></label>
+        <textarea class="form-input" id="car-year" name="car-year"></textarea>
+      </div>
+      <div class="form-group">
         <button type="submit" class="btn btn-primary">Materialize Item</button>
       </div>
     </form>
@@ -34,15 +38,22 @@
 {{!-- show already rendered/made items listed in cards --}}
 {{!-- use partial --}}
 {{!-- need object for info of car items name of key for the pairs --}}
-{{#each cars as |car|}}
+{{#if user}}
 {{> profile-partial}}
-{{/each}}
+<div class="col-md-4">
+        <button class="btn btn-sm " data-id="{{user.cars.id}}">DELETE</button>
+</div>
+{{/if}}
 
-  {{#if item.length}}
+{{!-- {{#each cars as |car|}}
+{{> profile-partial}}
+{{/each}} --}}
+
+  {{!-- {{#if item.length}}
   <div class="col-md-6 item-list">
     <h3>Items Up For Bid:</h3>
 
-    {{#each item as |item|}}
+    {{#each user.cars as |car|}}
     <div class="row mb-2">
       <div class="col-md-8">
         <h4><a href="/item/{{item.id}}">{{item.name}}</a></h4>
@@ -53,7 +64,7 @@
     </div>
     {{/each}}
   </div>
-  {{/if}}
+  {{/if}} --}}
 </div>
 
 <script src="./js/profile.js"></script>
