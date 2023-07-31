@@ -1,0 +1,35 @@
+ <div class="container-fluid mt-5">
+      <div class="row">
+
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img
+              src="{{image_url}}"
+              class="card-img-top"
+              alt="{{make}} {{model}}"
+            />
+            <div class="card-body">
+              <h5 class="card-title"><a href="/car/{{id}}">{{make}}
+                  {{model}}</a></h5>  
+                <li>Year: {{year}}</li>
+                <li>Price: {{price}} 💲</li>
+                <li>
+                  Bids:
+                  {{bids.length}}
+                </li>
+                 <li>
+                 Greatest Bid:
+                 
+  
+                </li>
+             
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Created by
+                {{user.username}}
+                on
+                {{format_date created_at}}</small>
+            </div>
+          </div>
+        </div>
+      
