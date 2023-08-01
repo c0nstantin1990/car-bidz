@@ -79,34 +79,7 @@ router.get("/car/:id", (req, res) => {
         return;
       }
       const car = dbCarData.get({ plain: true });
-
-
-
-
-
-      
-      // const highestBid = Math.max(car.bids.bid_price)
-      // console.log(car.bids.split(""));
-      // console.log(car.bids)
-      const bidArray = [];
-      for (var i = 0; i < car.bids.length; i++) {
-        bidArray.push(car.bids[i].bid_price);
-      }
-      // const highestBid = Math.max(...bidArray); // insert this array as , deliniated  
-      const highestBid = {
-        greatestBid: Math.max(...bidArray)
-      }
-      console.log(highestBid)
-
-
-
-
-
-
-
       res.render("singleCar", {
-        car: car,
-        // highestBid: highestBid,
         car,
         loggedIn: req.session.loggedIn,
       });
