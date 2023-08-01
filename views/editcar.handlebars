@@ -1,7 +1,6 @@
 <body id="font">
   <div id='edit-car'>
       <article>
-        <a href="/profile" class="btn btn-secondary">&larr; Back to Profile</a>
         <h2>Edit Car</h2>
         <form class="edit-car-form">
           <div class="form-group">
@@ -43,14 +42,13 @@
           </div>
           <div>
             <p>Posted on
-              {{format_date car.created_at}}<a href="/car/{{car.id}}">
-                Bids:{{car.bids.length}}
+              {{format_date car.created_at}}
+            </p>
+              <a href="/car/{{car.id}}">
+                Bids: {{car.bids.length}}
               </a>
-            </p>
-            <p>
-
-            </p>
           </div>
+          <br>
           <button type="submit" class="btn btn-primary">Save Car</button>
           <button type="button" class="btn btn-danger delete-car-btn">Delete Car</button>
         </form>
@@ -62,11 +60,11 @@
           <textarea name="bid-body" class="form-control"></textarea>
         </div>
         <button type="submit" class="btn btn-success">Add Bid</button>
+        <a href="/profile" class="btn btn-secondary">&larr; Back to Profile</a>
       </form>
       {{> bids car.bids}}
     </div>
 
-<footer id="created-by"> Created by: Constantin, Ashley, Josh, Carson, Isabel    © 2023</footer>
 
 
     <script src="/js/editCar.js"></script>

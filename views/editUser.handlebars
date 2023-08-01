@@ -1,7 +1,6 @@
 <body id="font">
-  <div id="edit-user">
-    <article>
-      <a href="/profile" class="btn btn-secondary">&larr; Back to Profile</a>
+  <div id="edit-user" class="row justify-content-center">
+    <article class="col-md-4">
       <h2>Update My Info</h2>
       <form class="edit-user-form">
         <div class="form-group">
@@ -28,6 +27,7 @@
         </div>
         <input type="hidden" id="user-id" name="user-id" value={{user.id}} />
         <button type="submit" class="btn btn-primary">Update</button>
+      <a href="/profile" class="btn btn-secondary">&larr; Back to Profile</a>
       </form>
     </article>
   </div>

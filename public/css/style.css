@@ -1,26 +1,25 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
 /* all fonts connected by body ID of the forms */
 #font {
     font-family: 'Playfair Display', 'Courier New', 'Courier', 'monospace';
   }
   
   
-  
-  
   /* CARINFO.HANDLEBARS */
   
   #car-list-div {
     margin-top: 50px;
-    display: flex;
-    flex: content;
-    flex-wrap: wrap;
-  
+    width: 20%;
+    margin: 15px;
   }
   
   /* car info cards */
   #car-list {
-    margin-top: 50px;
     max-width: 500px;
-    max-height: 500px;
+    max-height: 600px;
+    margin-top: 50px;
     margin: auto;
     padding: 20 20 20 20;
     border-radius: 20px;
@@ -38,6 +37,9 @@
   }
   
   
+
+
+
   /* MAIN.HANDLEBARS */
   /* name of site */
   #app-title {
@@ -57,42 +59,53 @@
   }
   
   
+
+
   
   
   /* PROFILE.HANDLEBARS */
   /* form and info */
   #profile-data {
-  display: flex;
-  flex-direction: wrap;
+  margin-top: 40px;
+  margin-left: 280px;
+  background-color:  rgb(70, 92, 106);
+  border-radius: 30px;
+  color: white;
+  text-shadow: 4px 2px #1a2239;
+  padding: 100 10 10 80;
+  }
+
+  .wrap-func {
+    display: flex;
+    flex-direction: wrap;
   }
   
-  .sub-title {
+  #sub-title {
     font-size: 45px;
     margin-top: 30px;
     font-weight: bolder;
     color:rgb(70, 92, 106);
     text-decoration: overline;
   }
-  
-  /* #profile-list {
+
+  .your-cars {
     display: flex;
+    flex-direction: row;
+  }
+
+  #profile-list {
+    display: flex;
+    flex-wrap: wrap;
     align-content: space-around;
-  } */
-  
-  
-  /*  */
-  /* they are links so trying to figure out the best way to color scheme it */
-  /*  */
-  
-  .colour {
-  color: white;
-  text-decoration: none;
+    align-content: center;
   }
   
-  /*  */
-  /* FIGURE OUT WHY SHOWING RIGHT ON MAIN.HBS AND FUNKY IN PROFILE.HBS */
-  /*  */
-  #new-car-form {
+#colour {
+  color: white;
+  }
+
+#new-car-form {
+    display: flex;
     margin-top: 40px;
     margin-left: 280px;
     background-color:  rgb(70, 92, 106);
@@ -100,6 +113,7 @@
     color: white;
     text-shadow: 4px 2px #1a2239;
     padding: 100 10 100 100;
+    align-content: space-between;
   }
   
   #info {
@@ -114,15 +128,25 @@
   }
   
   
+
+
+
   /* EDITUSER.HANDLEBARS */
   #edit-user {
-    background-color:  rgb(70, 92, 106);
+    margin-left: 150;
+    max-width: 1200;
+    margin-top: 50px;
+    background-color: rgb(70, 92, 106);
     border-radius: 40px;
     padding: 40;
     color: white;
     text-shadow: 7px 2px #1a2239;
   }
   
+
+
+
+
   /* EDITCAR.HANDLEBARS */
   #edit-car {
     margin-top: 50px;
@@ -146,10 +170,30 @@
   }
   
   
-  
-  
-  
-  
+
+
+
+
+  /* HOMEPAGE.HBS*/
+  /* wrap the car cards */
+  .homepage-car-list {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+   
+
+
+
+
+/* EDITBTN.HBS*/
+/* row issues */
+#car-edit-div {
+  margin-top: 50px;
+  margin: 15px;
+}
   
   
   
@@ -158,6 +202,7 @@
   /* LOGIN */
   /* button to be what carson found */
   #login {
+    margin-top: 50px;
     background-color:  rgb(70, 92, 106);
     border-radius: 40px;
     padding: 40;
@@ -165,19 +210,34 @@
     text-shadow: 7px 2px #1a2239;
   }
   
+
+
+
+
+
   /* SIGNUP */
   /* buttons to be what carson found */
   #signup {
+    margin-top: 50px;
     background-color: rgb(70, 92, 106);
     border-radius: 40px;
     padding: 40;
     color: white;
     text-shadow: 7px 2px #1a2239;
   }
+
+
+a:visited, a:link  {
+  color: white;
+  text-decoration: none;
+}
   
   
-  
-  
+
+
+
+
+
   /* FOOTER ALL PAGES*/
   #created-by-text{
     color: white;
