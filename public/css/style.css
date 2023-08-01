@@ -65,6 +65,12 @@
   
   /* PROFILE.HANDLEBARS */
   /* form and info */
+  .wrap-func {
+    display: flex;
+    flex-direction: wrap;
+    margin: auto;
+  }
+  
   #profile-data {
   margin-top: 40px;
   margin-left: 280px;
@@ -72,14 +78,9 @@
   border-radius: 30px;
   color: white;
   text-shadow: 4px 2px #1a2239;
-  padding: 100 10 10 80;
+  padding: 60px;
   }
 
-  .wrap-func {
-    display: flex;
-    flex-direction: wrap;
-  }
-  
   #sub-title {
     font-size: 45px;
     margin-top: 30px;
@@ -91,13 +92,6 @@
   .your-cars {
     display: flex;
     flex-direction: row;
-  }
-
-  #profile-list {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: space-around;
-    align-content: center;
   }
   
 #colour {
@@ -169,6 +163,12 @@
   
   }
   
+
+
+/* SINGLECAR.HBS */
+#focus-car {
+  margin: 50px;
+}
   
 
 
