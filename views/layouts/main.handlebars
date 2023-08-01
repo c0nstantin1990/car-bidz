@@ -12,13 +12,14 @@
     <link rel="stylesheet" href="/css/style.css" />
   </head>
 
-  <body>
+  <body id="font">
     <header>
       <!-- Bootstrap navbar -->
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
           <!-- Move "Car Bidz" to the left -->
-          <a class="navbar-brand me-auto" href="/">Car Bidz</a>
+            <a id='app-title' class="navbar-brand me-auto" href="/">Car Bidz</a>
+            <span id="app-funny" class="navbar-brand mb-0 h1">Your connection for car collection!</span>          
           <button
             class="navbar-toggler"
             type="button"
@@ -66,6 +67,9 @@
     {{#if loggedIn}}
       <script src="/js/logout.js"></script>
     {{/if}}
+
+<footer id="created-by"> Created by: Constantin, Ashley, Josh, Carson, Isabel    © 2023</footer>
+
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script
