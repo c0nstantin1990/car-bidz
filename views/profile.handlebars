@@ -1,10 +1,11 @@
 <body id="font">
-  <div id="profile-data">
-    <div class="new-car-form" class="row">
-      <div>
-        <div class="col-md-6">
-          <h2>Add New Car</h2>
-          <form class="new-car-form">
+  <div id="profile-list">
+    <div class="new-car-form">
+      <div class="wrap-func">
+        <div>
+          <div id="profile-data">
+            <h2>Add New Car</h2>
+            <form class="new-car-form">
             <div class="form-group">
               <label for="car-make">Make</label>
               <input
@@ -55,28 +56,31 @@
               ></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Create</button>
-          </form>
-        </div>
-        <div class="col-md-6">
+            </form>
+          </div>
+      </div>
+        <div id='info'>
           <h2>My Info</h2>
           {{> userInfo}}
         </div>
+      </div>
+
     
 
       {{#if cars.length}}
-        <section class="col-md-7">
-          <h2>Your Cars</h2>
-          <div>
+        <section >
+          <h2  id="sub-title" >Your Cars:</h2>
+          <div class="your-cars">
             {{#each cars as |car|}}
               
-                {{> carInfo car}}
-                <a
+                {{> editBtn car}}
+                {{!-- <a id="edit-button-profile"
                   href="/profile/edit/{{car.id}}"
                   class="btn btn-sm btn-secondary"
-                >Edit Car</a>
+                >Edit Car</a> --}}
              
             {{/each}}
-       
+          </div>
         </section>
       {{/if}}
       </div>

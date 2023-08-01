@@ -1,5 +1,5 @@
-<div id='car-list-div' class="container">
-      <div>
+<div id='car-edit-div' class="container">
+      <div class="row">
 
         <div id="profile-page-sizing">
           <div id="car-list" class="card">
@@ -22,7 +22,10 @@
                   {{highest_bid bids}}
   
                 </li>
-             
+                <a id="edit-button-profile"
+                  href="/profile/edit/{{id}}"
+                  class="btn btn-sm btn-secondary"
+                >Edit Car</a>
             </div>
             <div class="card-footer">
               <small  id='colour' class="text">Created by
