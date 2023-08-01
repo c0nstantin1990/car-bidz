@@ -1,0 +1,21 @@
+<div class="container mt-4">
+
+    {{> carInfo car}}
+
+    {{#if loggedIn}}
+    <form class="bid-form mt-4">
+      <div class="form-group">
+        <label for="bid-body">Place your Bid:</label>
+        <textarea name="bid-body" class="form-control"></textarea>
+      </div>
+      <button type="submit" class="btn btn-success">Add Bid</button>
+    </form>
+    {{/if}}
+    {{> bids car.bids}}
+    {{#if loggedIn}}
+
+<footer id="created-by"> Created by: Constantin, Ashley, Josh, Carson, Isabel    © 2023</footer>
+
+    <script src="/js/bid.js"></script>
+    {{/if}}
+  
