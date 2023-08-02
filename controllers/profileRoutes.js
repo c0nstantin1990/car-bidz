@@ -38,7 +38,7 @@ router.get("/", withAuth, async (req, res) => {
     res.render("profile", { cars, loggedIn: true });
   } catch (err) {
     console.log(err);
-    res.status(500).json({ message: "Internal server error 1" });
+    res.status(500).json({ message: "Internal server error" });
   }
 });
 
@@ -81,7 +81,7 @@ router.get("/edit/:id", withAuth, async (req, res) => {
     }
 
     const car = dbCarData.get({ plain: true });
-    res.render("editCar", { car, loggedIn: true });
+    res.render("editcar", { car, loggedIn: true });
   } catch (err) {
     console.log(err);
     res.status(500).json({ message: "Internal server error" });
@@ -106,7 +106,7 @@ router.get("/edituser", withAuth, async (req, res) => {
     res.render("editUser", { user, loggedIn: true });
   } catch (err) {
     console.log(err);
-    res.status(500).json({ message: "Internal server error 2" });
+    res.status(500).json({ message: "Internal server error" });
   }
 });
 
