@@ -38,7 +38,7 @@ router.get("/", withAuth, async (req, res) => {
     res.render("profile", { cars, loggedIn: true });
   } catch (err) {
     console.log(err);
-    res.status(500).json(err);
+    res.status(500).json({ message: "Internal server error" });
   }
 });
 
@@ -47,6 +47,7 @@ router.get("/edit/:id", withAuth, async (req, res) => {
     const dbCarData = await Car.findOne({
       where: {
         id: req.params.id,
+        user_id: req.session.user_id, 
       },
       attributes: [
         "id",
@@ -80,10 +81,10 @@ router.get("/edit/:id", withAuth, async (req, res) => {
     }
 
     const car = dbCarData.get({ plain: true });
-    res.render("editCar", { car, loggedIn: true });
+    res.render("editcar", { car, loggedIn: true });
   } catch (err) {
     console.log(err);
-    res.status(500).json(err);
+    res.status(500).json({ message: "Internal server error" });
   }
 });
 
@@ -105,7 +106,7 @@ router.get("/edituser", withAuth, async (req, res) => {
     res.render("editUser", { user, loggedIn: true });
   } catch (err) {
     console.log(err);
-    res.status(500).json(err);
+    res.status(500).json({ message: "Internal server error" });
   }
 });
 
