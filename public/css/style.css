@@ -36,6 +36,18 @@
     list-style-type: none;
   }
   
+
+
+/* BIDS.HBS */
+/* each bid will be highlighted */
+#bid-background {
+  margin-top: 20px;
+  background:  rgba(70, 92, 106, 0.31);
+  border-radius: 20px;
+  padding-left: 15px;
+}
+
+
   
 
 
@@ -92,6 +104,7 @@
   .your-cars {
     display: flex;
     flex-direction: row;
+
   }
   
 #colour {
