@@ -7,11 +7,11 @@
   }
   
   
-  /* CARINFO.HANDLEBARS */
-  
-  #car-list-div {
+ /* CARINFO.HANDLEBARS */
+
+#car-list-div {
     margin-top: 50px;
-    width: 20%;
+    width: 100%;
     margin: 15px;
   }
   
@@ -19,10 +19,9 @@
   #car-list {
     max-width: 500px;
     max-height: 600px;
-    min-height: 500px;
     margin-top: 50px;
     margin: auto;
-    padding: 20 20 20 20;
+    padding: 20px;
     border-radius: 20px;
     background-color: rgb(70, 92, 106);
     color: white;
@@ -70,10 +69,6 @@
     text-shadow: 1px 0px #1a2239;
     text-decoration: overline;
   }
-  
-  
-
-
   
   
   /* PROFILE.HANDLEBARS */
@@ -177,9 +172,6 @@
 }
   
 
-
-
-
   /* HOMEPAGE.HBS*/
   /* wrap the car cards */
   .homepage-car-list {
@@ -189,10 +181,6 @@
     flex-direction: row;
     justify-content: space-between;
   }
-   
-
-
-
 
 /* EDITBTN.HBS*/
 /* row issues */
@@ -254,5 +242,82 @@ a:visited, a:link  {
     text-align: center;
   }
   
+  /* Mobile */
+@media only screen and (max-width: 767px) {
+    /* Adjust car info cards */
+    #car-list-div {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+    }
+  
+    #car-list {
+      width: 60%;
+      align-items: center;
+    }
+  
+    /* Adjust profile and new car form */
+    #profile-data,
+    #new-car-form {
+      margin-left: 5%;
+      margin-right: 5%;
+    }
+  
+
+  }
+  
+  /* Tablet */
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    /* Adjust car info cards */
+    #car-list-div {
+      width: 40%;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+  
+    #car-list {
+      flex-basis: 48%;
+      box-sizing: border-box;
+      margin: 10px;
+    }
+  
+    /* Adjust profile and new car form */
+    #profile-data,
+    #new-car-form {
+      margin-left: 5%;
+      margin-right: 5%;
+    }
+  
+
+  }
+  
+  /* Desktop */
+  @media only screen and (min-width: 992px) {
+    /* Adjust car info cards */
+    #car-list-div {
+      width: 20%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      flex-direction: row;
+    }
+  
+    #car-list {
+      max-width: 500px;
+      margin: 10px;
+    }
+  
+    /* Adjust profile and new car form */
+    #profile-data,
+    #new-car-form {
+      margin-left: 280px;
+    }
+
+  }
   
   
