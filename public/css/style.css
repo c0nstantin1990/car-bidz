@@ -19,6 +19,7 @@
   #car-list {
     max-width: 500px;
     max-height: 600px;
+    min-height: 500px;
     margin-top: 50px;
     margin: auto;
     padding: 20 20 20 20;
@@ -104,7 +105,6 @@
   .your-cars {
     display: flex;
     flex-direction: row;
-
   }
   
 #colour {
@@ -168,13 +168,6 @@
     text-shadow: 7px 2px #1a2239;
   }
   
-  /*  */
-  /* delete button*/
-  /* for carson */
-  /*  */
-  #btnDel {
-  
-  }
   
 
 
