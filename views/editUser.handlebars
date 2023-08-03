@@ -1,0 +1,35 @@
+<body id="font">
+  <div id="edit-user" class="row justify-content-center">
+    <article class="col-md-4">
+      <h2>Update My Info</h2>
+      <form class="edit-user-form">
+        <div class="form-group">
+          <label for="user-name">User Name</label>
+          <input
+            name="user-name"
+            type="text"
+            class="form-control"
+            value="{{user.username}}"
+          />
+        </div>
+        <div class="form-group">
+          <label for="email">User Email</label>
+          <input
+            name="email"
+            type="email"
+            class="form-control"
+            value="{{user.email}}"
+          />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" name="password" />
+        </div>
+        <input type="hidden" id="user-id" name="user-id" value={{user.id}} />
+        <button type="submit" class="btn btn-primary">Update</button>
+      <a href="/profile" class="btn btn-secondary">&larr; Back to Profile</a>
+      </form>
+    </article>
+  </div>
+  <script src="/js/editUser.js"></script>
+</body>

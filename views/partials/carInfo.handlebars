@@ -1,0 +1,40 @@
+<div id='car-list-div' class="container">
+      <div>
+
+        <div id="profile-page-sizing">
+          <div id="car-list" class="card">
+            <img id="img"
+              src="{{image_url}}"
+              class="card-img-top"
+              alt="{{make}} {{model}}"
+            />
+            <div id="list-items" class="card-body">
+              <h5 class="card-title"><a href="/car/{{id}}">{{make}}
+                  {{model}}</a></h5>  
+                <li>Year: {{year}}</li>
+                <li>Price: 💲 {{price}} </li>
+                <li>
+                  Bids:
+                  {{bids.length}}
+                </li>
+                 <li>
+                 Greatest Bid:
+                  {{highest_bid bids}}
+  
+                </li>
+             
+            </div>
+            <div class="card-footer">
+              <small  id='colour' class="text">Created by
+                {{user.username}}
+                on
+                {{format_date created_at}}</small>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+
+        
+        
+      

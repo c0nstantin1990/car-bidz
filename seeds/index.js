@@ -5,23 +5,23 @@ const seedBids = require("./bidSeeds");
 const sequelize = require("../config/connection");
 
 const seedAll = async () => {
-    await sequelize.sync({ force: true });
+  await sequelize.sync({ force: true });
 
-    console.log("\n----- DATABASE SYNCED -----\n");
+  console.log("\n----- DATABASE SYNCED -----\n");
 
-    await seedUsers();
+  await seedUsers();
 
-    console.log("\n----- USERS SEEDED -----\n");
+  console.log("\n----- USERS SEEDED -----\n");
 
-    await seedCars();
+  await seedCars();
 
-    console.log("\n----- CARS SEEDED -----\n");
+  console.log("\n----- CARS SEEDED -----\n");
 
-    await seedBids();
+  await seedBids();
 
-    console.log("\n----- BIDS SEEDED -----\n");
+  console.log("\n----- BIDS SEEDED -----\n");
 
-    process.exit(0);
+  process.exit(0);
 };
 
 seedAll();

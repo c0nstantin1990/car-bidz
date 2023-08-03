@@ -1,70 +1,90 @@
-<div class="row">
-  <div class="col-auto">
-    <h2>Welcome back, {{username}}!</h2>
-  </div>
-</div>
+<body id="font">
+  <div>
+    <div class="new-car-form">
+      <div class="wrap-func">
+        <div>
+          <div id="profile-data">
+            <h2>Add New Car</h2>
+            <form class="new-car-form">
+            <div class="form-group">
+              <label for="car-make">Make</label>
+              <input
+                type="text"
+                class="form-control"
+                id="car-make"
+                name="car-make"
+              />
+            </div>
+            <div class="form-group">
+              <label for="car-model">Model</label>
+              <textarea
+                class="form-control"
+                id="car-model"
+                name="car-model"
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label for="car-year">Year</label>
+              <textarea
+                class="form-control"
+                id="car-year"
+                name="car-year"
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label for="car-price">Price</label>
+              <textarea
+                class="form-control"
+                id="car-price"
+                name="car-price"
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label for="car-lbid">Starting Bid</label>
+              <textarea
+                class="form-control"
+                id="car-lbid"
+                name="car-lbid"
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label for="car-image">Image</label>
+              <textarea
+                class="form-control"
+                id="car-image"
+                name="car-image"
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Create</button>
+            </form>
+          </div>
+      </div>
+        <div id='info'>
+          <h2>My Info</h2>
+          {{> userInfo}}
+        </div>
+      </div>
 
-<div class="row mt-4">
-  <div class="col-md-6">
-    <h3>Post New Item</h3>
+    
 
-    <form class="form new-item-form">
-      <div class="form-group">
-        <label for="item-name"></label>
-        <input class="form-input" type="text" id="item-name" name="item-name" />
-      </div>
-      <div class="form-group">
-        <label for="item-price">($):</label>
-        <input class="form-input" type="number" id="item-price" name="item price" />
-      </div>
-      <div class="form-group">
-        <label for="car-make"></label>
-        <textarea class="form-input" id="car-make" name="car-make"></textarea>
-      </div>
-      <div class="form-group">
-        <label for="car-model"></label>
-        <textarea class="form-input" id="car-model" name="car-model"></textarea>
-      </div>
-      <div class="form-group">
-        <label for="car-year"></label>
-        <textarea class="form-input" id="car-year" name="car-year"></textarea>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Materialize Item</button>
-      </div>
-    </form>
-  </div>
+      {{#if cars.length}}
+        <section >
+          <h2  id="sub-title" >Your Cars:</h2>
+          <div class="your-cars">
+            {{#each cars as |car|}}
+              
+                {{> editBtn car}}
 
-{{!-- show already rendered/made items listed in cards --}}
-{{!-- use partial --}}
-{{!-- need object for info of car items name of key for the pairs --}}
-{{#if user}}
-{{> profile-partial}}
-<div class="col-md-4">
-        <button class="btn btn-sm " data-id="{{user.cars.id}}">DELETE</button>
-</div>
-{{/if}}
-
-{{!-- {{#each cars as |car|}}
-{{> profile-partial}}
-{{/each}} --}}
-
-  {{!-- {{#if item.length}}
-  <div class="col-md-6 item-list">
-    <h3>Items Up For Bid:</h3>
-
-    {{#each user.cars as |car|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/item/{{item.id}}">{{item.name}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm " data-id="{{item.id}}">DELETE</button>
+                {{!-- <a id="edit-button-profile"
+                  href="/profile/edit/{{car.id}}"
+                  class="btn btn-sm btn-secondary"
+                >Edit Car</a> --}}
+             
+            {{/each}}
+          </div>
+        </section>
+      {{/if}}
       </div>
     </div>
-    {{/each}}
-  </div>
-  {{/if}} --}}
-</div>
-
-<script src="./js/profile.js"></script>
+<script src="/js/addCar.js"></script>
+</body>

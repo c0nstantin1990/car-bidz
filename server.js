@@ -1,27 +1,18 @@
 const path = require("path");
+require("dotenv").config();
 const express = require("express");
-const session = require("express-session");
+const routes = require("./controllers/");
+const sequelize = require("./config/connection");
 const exphbs = require("express-handlebars");
-const routes = require("./controllers");
+const session = require("express-session");
+const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const helpers = require("./utils/helpers");
 
-const sequelize = require("./config/connection.js");
-const SequelizeStore = require("connect-session-sequelize")(session.Store);
-
-const app = express();
-const PORT = process.env.PORT || 3001;
-
-// Set up Handlebars.js engine with custom helpers
 const hbs = exphbs.create({ helpers });
 
 const sess = {
-  secret: "Super secret secret",
-  cookie: {
-    maxAge: 300000,
-    httpOnly: true,
-    secure: false,
-    sameSite: "strict",
-  },
+  secret: process.env.SESSION_SECRET || "Super secret secret",
+  cookie: { maxAge: 7200000 },
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
@@ -29,18 +20,28 @@ const sess = {
   }),
 };
 
-app.use(session(sess));
+const app = express();
+const PORT = process.env.PORT || 3001;
 
-// Inform Express.js on which template engine to use
+app.use(express.static(path.join(__dirname, "public")));
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, "public")));
-
+app.use(session(sess));
 app.use(routes);
 
-sequelize.sync({ force: true }).then(() => {
-  app.listen(PORT, () => console.log("Now listening"));
+// Error Handling Middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send("Something went wrong!");
 });
+
+sequelize
+  .sync({ force: false })
+  .then(() => {
+    app.listen(PORT, () => console.log(`Now listening on port ${PORT}`));
+  })
+  .catch((err) => {
+    console.error("Error connecting to the database:", err);
+  });

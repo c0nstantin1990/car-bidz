@@ -1,0 +1,14 @@
+<div class="bids">
+  {{#each this}}
+    <section id="bid-background" class="bid col-md-4">
+      <div class="meta">
+        {{user.username}}
+        on
+        {{format_date created_at}}
+      </div>
+      <div class="text">
+        {{bid_price}}
+      </div>
+    </section>
+  {{/each}}
+</div>
