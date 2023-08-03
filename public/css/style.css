@@ -5,7 +5,8 @@
 #font {
     font-family: 'Playfair Display', 'Courier New', 'Courier', 'monospace';
   }
-  
+
+
   
  /* CARINFO.HANDLEBARS */
 
@@ -18,7 +19,9 @@
   /* car info cards */
   #car-list {
     max-width: 500px;
-    max-height: 600px;
+    max-height: 500px;
+    min-height: 500px;
+    min-width: 300px;
     margin-top: 50px;
     margin: auto;
     padding: 20px;
@@ -48,18 +51,22 @@
 }
 
 
+
+/* MAIN.HANDLEBARS */
+/* COLLAPSABLE NAVBAR */
+  #navbarNav {
+    position: relative;
+    margin-top: 120px;
+  }
   
-
-
-
-  /* MAIN.HANDLEBARS */
-  /* name of site */
+/* name of site */
   #app-title {
     position: absolute;
     font-size: 40px;
     color: rgb(217, 219, 223);
   }
-  /* will make under the name car bidz just thought it was cute */
+
+/* will make under the name car bidz just thought it was cute */
   #app-funny {
     position: relative;
     top: 40px;
